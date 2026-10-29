@@ -78,11 +78,16 @@ function init() {
   /* Aba do WhatsApp aparece depois do primeiro screen */
   const tab = document.querySelector('.wa-tab');
   const hero = document.querySelector('.hero');
-  const quiz = document.querySelector('#analise');
-  let pastHero = false, inQuiz = false;
-  const sync = () => tab.classList.toggle('is-on', pastHero && !inQuiz);
+  // some onde já existe um botão de WhatsApp na tela: o quiz e o fechamento
+  const covered = new Set();
+  let pastHero = false;
+  const sync = () => tab.classList.toggle('is-on', pastHero && !covered.size);
   new IntersectionObserver(([e]) => { pastHero = !e.isIntersecting; sync(); }).observe(hero);
-  new IntersectionObserver(([e]) => { inQuiz = e.isIntersecting; sync(); }, { threshold: 0.35 }).observe(quiz);
+  const cover = new IntersectionObserver((entries) => {
+    for (const e of entries) e.isIntersecting ? covered.add(e.target) : covered.delete(e.target);
+    sync();
+  }, { threshold: 0.35 });
+  document.querySelectorAll('#analise, .close').forEach((el) => cover.observe(el));
 
   initQuiz();
 }
