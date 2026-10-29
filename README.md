@@ -13,18 +13,24 @@ Rodar local: `python3 -m http.server 5178` e abrir http://localhost:5178.
 
 ## Formulário
 
-1. Qual o seu nome?
-2. Quanto dinheiro foi perdido no golpe? (máscara R$)
-3. O golpista se passou por um agente do banco? (Sim / Não)
+Três etapas, uma para cada divisa do logo:
 
-Ao enviar, abre `wa.me/5591985560099` com as respostas na mensagem. Nada é salvo no site.
-Dispara o evento `generate_lead` no Google Analytics (mesmo ID do site, G-9BD24FG4YH).
-Há também uma aba fixa de WhatsApp que aparece depois do primeiro screen.
+1. Nome completo e WhatsApp com DDD (máscara de telefone)
+2. Valor aproximado perdido (3 faixas) e há quanto tempo ocorreu (4 opções)
+3. Nome do banco (com sugestões)
+
+Ao enviar:
+- manda uma cópia do lead por e-mail via FormSubmit (`mks.advogados01@gmail.com`, o mesmo do site institucional);
+- abre `wa.me/5591985560099` com as respostas na mensagem;
+- dispara o evento `generate_lead` no Google Analytics (G-9BD24FG4YH).
+
+`privacidade.html` tem a Política de Privacidade e os Termos de Uso.
 
 ## Conferir antes de publicar
 
-- Números da OAB dos advogados e do escritório (o Código de Ética pede nome e inscrição na publicidade).
+- Nome do advogado dono da inscrição OAB 40.586-B (o rodapé mostra só o escritório) e a seccional.
+- O FormSubmit pede confirmação por e-mail no primeiro envio AJAX: fazer um envio de teste e clicar no link que chega.
+- "Análise gratuita": conferir com o Provimento 205/2021 da OAB, que restringe menção a gratuidade em publicidade.
+- Política de Privacidade: prazo de 6 meses para excluir dados e demais textos são sugestões; revisar.
 - Se o Dr. Vinicius Mendes é mesmo o responsável pelos casos de Pix (inferido da área: Direito Bancário).
-- Texto do FAQ "Quanto custa?" e as respostas sobre MED e Súmula 479 do STJ.
 - Pixel do Meta/Google Ads, se o anúncio usar.
-- Banner de cookies/LGPD, se exigido pela campanha.

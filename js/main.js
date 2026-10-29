@@ -1,22 +1,25 @@
 const WA = '5591985560099';
+const LEADS = 'https://formsubmit.co/ajax/mks.advogados01@gmail.com'; // mesmo e-mail do formulário do site institucional
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* Valor em reais: só dígitos, formatado como 1.234,56 */
-function formatBRL(raw) {
-  const digits = String(raw).replace(/\D/g, '').replace(/^0+/, '').slice(0, 11);
-  if (!digits) return '';
-  const cents = digits.padStart(3, '0');
-  const int = cents.slice(0, -2).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-  return `${int},${cents.slice(-2)}`;
+/* Telefone com DDD: (91) 98888-7777 ou (91) 3222-1111 */
+function formatPhone(raw) {
+  const d = String(raw).replace(/\D/g, '').replace(/^55(?=\d{10,11}$)/, '').slice(0, 11);
+  if (d.length <= 2) return d ? `(${d}` : '';
+  const mid = d.length === 11 ? 7 : 6;
+  return `(${d.slice(0, 2)}) ${d.slice(2, mid)}${d.length > mid ? '-' + d.slice(mid) : ''}`;
 }
+const phoneOk = (v) => /^\d{10,11}$/.test(String(v).replace(/\D/g, ''));
 
-function buildMessage({ nome, valor, banco }) {
+function buildMessage({ nome, whatsapp, valor, quando, banco }) {
   return [
-    'Olá! Vim pelo site da MKS Advogados e caí em um golpe do Pix.',
+    'Olá! Vim pelo site da MKS Advogados. Caí no golpe do Pix da falsa central.',
     `Nome: ${nome}`,
-    `Valor perdido: R$ ${valor}`,
-    `O golpista se passou por agente do banco: ${banco}`,
-    'Gostaria de uma análise do meu caso.',
+    `WhatsApp: ${whatsapp}`,
+    `Valor perdido: ${valor}`,
+    `Quando ocorreu: ${quando}`,
+    `Banco: ${banco}`,
+    'Quero verificar se posso recuperar meu dinheiro.',
   ].join('\n');
 }
 
@@ -36,16 +39,6 @@ function init() {
     const start = () => { clearInterval(timer); timer = setInterval(tick, 5600); };
     document.addEventListener('visibilitychange', () => (document.hidden ? clearInterval(timer) : start()));
     start();
-  }
-
-  /* Letras do título sobem uma a uma */
-  const h1 = document.querySelector('[data-letters]');
-  if (h1 && !reduce) {
-    const text = h1.textContent;
-    h1.setAttribute('aria-label', text);
-    h1.innerHTML = [...text].map((c, n) =>
-      `<span class="ch" aria-hidden="true" style="animation:stepIn .9s ${200 + n * 45}ms cubic-bezier(.2,.7,.2,1) both">${c === ' ' ? '&nbsp;' : c}</span>`
-    ).join('');
   }
 
   /* Entradas por seção, com escalonamento entre irmãos */
@@ -94,37 +87,44 @@ function init() {
 
 function initQuiz() {
   const form = document.getElementById('quiz');
-  const steps = [...form.querySelectorAll('.step')];
+  const el = form.elements;
+  const steps = [...form.querySelectorAll('.step[data-step]')];
   const status = document.getElementById('quiz-status');
   const chevs = [1, 2, 3].map((n) => document.querySelector(`.chev-${n}`));
-  const valor = form.elements.valor;
   let current = 0;
 
-  valor.addEventListener('input', () => { valor.value = formatBRL(valor.value); });
+  el.whatsapp.addEventListener('input', () => { el.whatsapp.value = formatPhone(el.whatsapp.value); });
 
-  const errorFor = (step) => step.querySelector('.field-error');
-  const valid = (n) => {
-    if (n === 0) return form.elements.nome.value.trim().length >= 2;
-    if (n === 1) return formatBRL(valor.value) !== '';
-    return !!form.elements.banco.value;
-  };
+  // cada etapa: [campo, válido?, id do erro]
+  const checks = [
+    [[el.nome, () => el.nome.value.trim().split(/\s+/).length >= 2, 'nome-erro'],
+     [el.whatsapp, () => phoneOk(el.whatsapp.value), 'whatsapp-erro']],
+    [[el.valor[0], () => !!el.valor.value, 'valor-erro'],
+     [el.quando[0], () => !!el.quando.value, 'quando-erro']],
+    [[el.banco, () => el.banco.value.trim().length >= 2, 'banco-erro']],
+  ];
+  const valid = (n) => checks[n].every(([, ok]) => ok());
   const light = () => chevs.forEach((c, n) => c.classList.toggle('is-lit', n < current || (n === current && valid(n))));
 
   const show = (n) => {
     steps[current].classList.remove('is-on');
     current = n;
     steps[n].classList.add('is-on');
-    status.textContent = `Pergunta ${n + 1} de 3`;
+    status.textContent = `Etapa ${n + 1} de 3`;
     light();
-    const focusable = steps[n].querySelector('input');
-    focusable?.focus({ preventScroll: true });
+    steps[n].querySelector('input')?.focus({ preventScroll: true });
   };
 
   const tryNext = () => {
-    const err = errorFor(steps[current]);
-    if (!valid(current)) { err.hidden = false; steps[current].querySelector('input').setAttribute('aria-invalid', 'true'); return false; }
-    err.hidden = true; steps[current].querySelector('input').removeAttribute('aria-invalid');
-    return true;
+    let first = null;
+    for (const [input, ok, errId] of checks[current]) {
+      const bad = !ok();
+      document.getElementById(errId).hidden = !bad;
+      bad ? input.setAttribute('aria-invalid', 'true') : input.removeAttribute('aria-invalid');
+      if (bad && !first) first = input;
+    }
+    first?.focus();
+    return !first;
   };
 
   form.addEventListener('click', (e) => {
@@ -141,9 +141,18 @@ function initQuiz() {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (!tryNext()) return;
-    const data = { nome: form.elements.nome.value.trim(), valor: formatBRL(valor.value), banco: form.elements.banco.value };
+    const data = {
+      nome: el.nome.value.trim(), whatsapp: el.whatsapp.value,
+      valor: el.valor.value, quando: el.quando.value, banco: el.banco.value.trim(),
+    };
+    // cópia do lead por e-mail; não bloqueia a ida ao WhatsApp
+    fetch(LEADS, {
+      method: 'POST', keepalive: true,
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ ...data, _subject: 'Novo lead: golpe do Pix', _template: 'table' }),
+    }).catch(() => {});
+    window.gtag?.('event', 'generate_lead', { method: 'whatsapp', valor: data.valor, quando: data.quando });
     const url = `https://wa.me/${WA}?text=${encodeURIComponent(buildMessage(data))}`;
-    window.gtag?.('event', 'generate_lead', { method: 'whatsapp', golpista_banco: data.banco });
     const win = window.open(url, '_blank');
     if (win) win.opener = null; else location.href = url;
   });
