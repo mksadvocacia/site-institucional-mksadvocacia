@@ -35,9 +35,15 @@ function init() {
   });
   
 
-  /* Aba do WhatsApp aparece depois do quadro de abertura */
+  /* Topo fica branco quando sai de cima da foto */
+  const top = document.querySelector('.top');
+  const solid = () => top.classList.toggle('is-solid', scrollY > 40);
+  addEventListener('scroll', solid, { passive: true });
+  solid();
+
+  /* Aba do WhatsApp aparece depois do hero */
   const tab = document.querySelector('.wa-tab');
-  const hero = document.querySelector('.board');
+  const hero = document.querySelector('.hero');
   // some no quiz e no fechamento (já têm botão) e nas dúvidas (não cobre as perguntas)
   const covered = new Set();
   let pastHero = false;
@@ -47,7 +53,7 @@ function init() {
     for (const e of entries) e.isIntersecting ? covered.add(e.target) : covered.delete(e.target);
     sync();
   }, { threshold: 0.35 });
-  document.querySelectorAll('#analise, .faq, .cta').forEach((el) => cover.observe(el));
+  document.querySelectorAll('#analise, .faq, .close').forEach((el) => cover.observe(el));
 
   initQuiz();
 }

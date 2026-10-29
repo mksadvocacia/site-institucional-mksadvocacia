@@ -32,4 +32,5 @@ Ao enviar:
 - Política de Privacidade: prazo de 6 meses para excluir dados e demais textos são sugestões; revisar.
 - OAB do Dr. Felipe Kato (o card dele ainda não mostra).
 - Confirmar que o sócio do centro na foto `img/socios.webp` é o Dr. Felipe Kato.
+- Aviso anti-golpe diz que a MKS só atende pelo (91) 98712-1589 e nunca cobra pela análise: confirmar.
 - Pixel do Meta/Google Ads, se o anúncio usar.
