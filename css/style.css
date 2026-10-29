@@ -61,6 +61,27 @@ h2 { font-size: var(--step-head); }
 .btn-gold:hover { background: var(--gold-hover); }
 .btn-navy { background: var(--navy); color: var(--white); }
 .btn-navy:hover { background: var(--navy-2); }
+/* CTA do WhatsApp: verde da marca, brilho que passa e pulso, pedidos do cliente */
+.btn-wa {
+  position: relative; overflow: hidden; isolation: isolate;
+  background: #25d366; color: #052e16; font-weight: 700;
+  animation: wa-pulse 2.4s ease-out infinite;
+}
+.btn-wa svg { width: 24px; height: 24px; flex: none; }
+.btn-wa:hover { background: #2ee673; }
+.btn-wa::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.65) 50%, transparent 70%); /* taste-skill-ignore: brilho pedido pelo cliente */
+  transform: translateX(-130%); animation: wa-sheen 3.2s ease-in-out infinite;
+}
+@keyframes wa-sheen { 0%, 55% { transform: translateX(-130%); } 100% { transform: translateX(130%); } }
+@keyframes wa-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, .55); } /* taste-skill-ignore: pulso pedido pelo cliente */
+  70%, 100% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); } /* taste-skill-ignore */
+}
+.btn-big { min-height: 64px; padding: 18px 34px; font-size: 1.125rem; }
+.hero-wa { margin-top: 28px; }
+
 .link {
   background: none; border: 0; padding: 12px 4px; cursor: pointer; font: inherit; color: inherit;
   text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px;
@@ -155,7 +176,7 @@ h2 { font-size: var(--step-head); }
 .field-error { margin-top: 6px; color: #b23a26; font-size: var(--step-small); }
 .step-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px; margin-top: 20px; }
 .step-actions .btn { flex: 1 1 100%; }
-.btn-cta { min-height: 60px; text-wrap: balance; }
+.btn-cta { min-height: 62px; text-wrap: balance; }
 .quiz-note { margin-top: 16px; font-size: var(--step-small); color: var(--muted); }
 .quiz-note svg { display: inline-block; width: 14px; height: 14px; margin: 0 6px -2px 0; color: var(--gold-text); }
 
@@ -195,8 +216,8 @@ h2 { font-size: var(--step-head); }
 .person:hover .person-photo img { transform: scale(1.05); }
 .person h3 { margin-top: 16px; font-size: 1.875rem; }
 .person-role { margin-top: 4px; color: var(--gold-text); font-weight: 600; font-size: var(--step-small); }
-.person p:last-child { margin-top: 8px; font-size: var(--step-small); color: var(--muted); }
-.team-card { grid-column: 1 / -1; background: var(--navy); color: var(--on-navy); padding: 32px 28px; display: grid; align-content: start; gap: 4px; }
+.person p:not(.person-role) { margin-top: 8px; font-size: var(--step-small); color: var(--muted); }
+.team-card { grid-column: 1 / -1; margin-top: 24px; background: var(--navy); color: var(--on-navy); padding: 32px 28px; display: grid; align-content: start; gap: 4px; }
 .team-card-name { font-size: 1.875rem; color: var(--white); }
 .team-card-role { color: var(--gold); font-weight: 600; font-size: var(--step-small); }
 .team-card dl { margin-top: 24px; display: grid; gap: 14px; font-size: var(--step-small); }
@@ -237,7 +258,17 @@ details[open] p { animation: rise .45s var(--ease); }
 .close { margin-top: var(--gap); background: var(--navy); color: var(--on-navy); padding: var(--gap) var(--m); text-align: center; display: grid; justify-items: center; }
 .close h2 { font-size: clamp(3rem, 2rem + 5vw, 6.5rem); color: var(--white); line-height: .95; }
 .close p { margin-top: 20px; font-size: var(--step-lead); color: var(--on-navy-muted); max-width: 34ch; }
-.close .btn { margin-top: 32px; min-width: min(100%, 320px); }
+.close-actions { margin-top: 36px; display: grid; justify-items: center; gap: 10px; width: 100%; }
+.close-actions .btn { width: min(100%, 460px); }
+.close-actions .link { color: var(--on-navy-muted); }
+.close-ig, .team-ig, .person-ig, .foot-social a { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; transition: color .2s, transform .2s var(--ease); }
+.close-ig svg, .team-ig svg, .person-ig svg, .foot-social svg { width: 20px; height: 20px; flex: none; }
+.close-ig { margin-top: 40px; color: var(--on-navy); font-weight: 600; }
+.close-ig:hover, .team-ig:hover { color: var(--gold); transform: translateY(-2px); }
+.person-ig { margin-top: 12px; color: var(--navy); font-weight: 600; font-size: var(--step-small); }
+.person-ig:hover { color: var(--gold-text); }
+.team-ig { margin-top: 22px; color: var(--white); font-weight: 600; font-size: var(--step-small); }
+.foot-social { margin-top: 12px; display: grid; gap: 8px; }
 
 /* ---------- Rodapé ---------- */
 .foot { background: var(--navy-deep); color: var(--on-navy-muted); padding: 64px max(var(--m), calc((100% - var(--max)) / 2 + var(--m))) 96px; display: grid; gap: 32px; font-size: var(--step-small); }
@@ -254,13 +285,13 @@ details[open] p { animation: rise .45s var(--ease); }
   position: fixed; right: 12px; bottom: 12px; z-index: 25;
   display: flex; align-items: center; justify-content: center; gap: 10px;
   width: 54px; min-height: 54px; padding: 0; border-radius: 2px;
-  background: var(--gold); color: var(--navy); font-weight: 600; text-decoration: none;
+  background: #25d366; color: #052e16; font-weight: 700; text-decoration: none;
   transform: translateY(calc(100% + 40px)); transition: transform .5s var(--ease), background-color .2s;
 }
 .wa-tab svg { width: 26px; height: 26px; }
 .wa-tab span { display: none; } /* no celular só o ícone, para não cobrir texto */
 .wa-tab.is-on { transform: none; }
-.wa-tab:hover { background: var(--gold-hover); }
+.wa-tab:hover { background: #2ee673; }
 html:not(.js) .wa-tab { transform: none; }
 
 /* Entradas ao rolar */
@@ -301,7 +332,7 @@ html:not(.js) .wa-tab { transform: none; }
   .choices-2 { grid-template-columns: 1fr 1fr; }
   .split { grid-template-columns: 5fr 7fr; gap: 72px; align-items: center; }
   .team-grid { grid-template-columns: 1fr 1fr 1fr; }
-  .team-card { grid-column: auto; align-content: end; }
+  .team-card { grid-column: auto; align-content: end; margin-top: 0; }
   .faq { grid-template-columns: 4fr 8fr; gap: 72px; align-items: start; }
   .faq-head { position: sticky; top: 110px; }
 }

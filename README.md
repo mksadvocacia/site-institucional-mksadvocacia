@@ -30,8 +30,6 @@ Ao enviar:
 
 - O FormSubmit pede confirmação por e-mail no primeiro envio AJAX: fazer um envio de teste e clicar no link que chega.
 - Política de Privacidade: prazo de 6 meses para excluir dados e demais textos são sugestões; revisar.
-- De qual advogado é a OAB/PA 40.586-B: a página mostra o número sem nome, e a publicidade da OAB pede nome e inscrição.
-- OAB do Dr. Felipe Kato (o card dele ainda não mostra).
-- Confirmar que o sócio do centro na foto `img/socios.webp` é o Dr. Felipe Kato.
+- Confirmar que o sócio de gravata vermelha na foto `img/socios-wide.webp` é o Dr. Felipe Kato.
 - Aviso anti-golpe diz que a MKS só atende pelo (91) 98712-1589 e nunca cobra pela análise: confirmar.
 - Pixel do Meta/Google Ads, se o anúncio usar.
