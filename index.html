@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Golpe do Pix da Falsa Central | MKS Advogados</title>
   <meta name="description" content="Caiu no golpe do Pix da falsa central? Seu banco pode ser responsável por devolver seu dinheiro. Análise gratuita e confidencial do seu caso pelo WhatsApp.">
-  <meta name="theme-color" content="#0d1524">
+  <meta name="theme-color" content="#f3f3f0">
   <meta property="og:title" content="Caiu no golpe do Pix da falsa central?">
   <meta property="og:description" content="Seu banco pode ser responsável por devolver seu dinheiro. Descubra em menos de 2 minutos.">
-  <meta property="og:image" content="img/socios.webp">
+  <meta property="og:image" content="img/socios-wide.webp">
   <link rel="icon" href="favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:wdth,wght@75..150,300..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=erode@400,401,500,600&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="img/felipe.webp">
   <link rel="stylesheet" href="css/style.css">
   <script>document.documentElement.classList.add('js')</script>
@@ -32,46 +32,51 @@
     <symbol id="lock" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5Zm-3 8V7a3 3 0 1 1 6 0v3H9Z"/></symbol>
   </svg>
 
-  <header class="bar">
-    <a class="brand" href="#topo" aria-label="MKS Advogados, início">
-      <svg class="brand-mark" aria-hidden="true"><use href="#mark"/></svg>
-      <span>MKS Advogados</span>
-    </a>
-    <a class="bar-link" href="https://wa.me/5591987121589?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20falar%20sobre%20um%20golpe%20do%20Pix." target="_blank" rel="noopener">WhatsApp</a>
-  </header>
+  <!-- Quadro de abertura: barra em tiles, título, fotos, formulário -->
+  <div class="board" id="topo">
+    <header class="board-bar">
+      <a class="tile tile-ink bar-mark" href="#topo" aria-label="MKS Advogados, início"><svg aria-hidden="true"><use href="#mark"/></svg></a>
+      <nav class="tile bar-nav" aria-label="Seções">
+        <span class="bar-name"><span class="bar-long">Mendes, Kato &amp; Sasaki Advogados</span><span class="bar-short">MKS Advogados</span></span>
+        <a href="#tempo">O prazo</a>
+        <a href="#como">Como funciona</a>
+        <a href="#equipe">Equipe</a>
+        <a href="#duvidas">Dúvidas</a>
+      </nav>
+      <a class="tile tile-ink bar-action" href="https://wa.me/5591987121589?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20falar%20sobre%20um%20golpe%20do%20Pix." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg><span>WhatsApp</span></a>
+    </header>
 
-  <main id="topo">
-    <!-- Hero: os três sócios em crossfade, como peças iluminadas numa sala escura -->
-    <section class="hero" aria-labelledby="hero-title">
-      <figure class="hero-photo" data-fade>
-        <img src="img/felipe.webp" width="853" height="1066" alt="Dr. Felipe Kato no escritório da MKS" class="is-on">
-        <img src="img/hikaru.webp" width="900" height="1125" alt="Dr. Hikaru Sasaki no escritório da MKS" loading="lazy">
+    <main class="board-grid">
+      <section class="tile tile-paper hero-text" aria-labelledby="hero-title">
+        <h1 id="hero-title">Caiu no golpe do Pix da falsa central?</h1>
+        <p class="hero-claim">Seu banco pode ser responsável por devolver seu dinheiro.</p>
+        <p class="hero-lead">O STJ e os tribunais reconhecem a responsabilidade das instituições financeiras por falhas na segurança. Descubra em menos de 2 minutos se o seu caso tem direito à recuperação judicial dos valores.</p>
+      </section>
+
+      <figure class="tile tile-photo hero-photo-a shutter">
+        <img src="img/felipe.webp" width="853" height="1066" alt="Dr. Felipe Kato, sócio da MKS, no escritório em Belém">
       </figure>
-      <h1 id="hero-title" class="hero-title">Caiu no golpe do Pix da falsa central?</h1>
-      <p class="hero-claim">Seu banco pode ser responsável por devolver seu dinheiro.</p>
-      <p class="hero-lead">O STJ e os tribunais reconhecem a responsabilidade das instituições financeiras por falhas na segurança. Descubra em menos de 2 minutos se o seu caso tem direito à recuperação judicial dos valores.</p>
-      <div class="hero-row">
-        <span>Atendimento nacional 100% digital</span>
-        <a class="btn btn-accent" href="#analise">Verificar meu caso</a>
-        <span>Resposta rápida via WhatsApp</span>
+      <figure class="tile tile-photo hero-photo-b">
+        <img src="img/hikaru.webp" width="900" height="1125" alt="Dr. Hikaru Sasaki, sócio da MKS, no escritório em Belém">
+      </figure>
+      <div class="tile tile-gold hero-note">
+        <p>Atendimento nacional, 100% digital. Resposta rápida via WhatsApp.</p>
       </div>
-    </section>
 
-    <!-- As três divisas do logo viram as três etapas do formulário -->
-    <section class="quiz" id="analise" aria-labelledby="quiz-title">
-      <div class="quiz-mark" aria-hidden="true">
-        <svg viewBox="0 0 100 80">
-          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path class="chev chev-3" d="M12 48 50 12l38 36" stroke-width="11"/>
-            <path class="chev chev-2" d="M27 60 50 38l23 22" stroke-width="8"/>
-            <path class="chev chev-1" d="M38 70 50 59l12 11" stroke-width="6"/>
-          </g>
-        </svg>
-      </div>
-      <div class="quiz-body">
-        <h2 id="quiz-title" data-reveal>Análise gratuita e confidencial do seu caso</h2>
-        <p class="quiz-intro" data-reveal>Preencha os dados abaixo para que nossa equipe jurídica especializada avalie a viabilidade do seu ressarcimento.</p>
-        <form class="quiz-form" id="quiz" novalidate data-reveal>
+      <!-- Formulário: as três divisas do logo são as três etapas -->
+      <section class="tile tile-ink quiz" id="analise" aria-labelledby="quiz-title">
+        <div class="quiz-head">
+          <svg class="quiz-mark" viewBox="0 0 100 80" aria-hidden="true">
+            <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path class="chev chev-3" d="M12 48 50 12l38 36" stroke-width="11"/>
+              <path class="chev chev-2" d="M27 60 50 38l23 22" stroke-width="8"/>
+              <path class="chev chev-1" d="M38 70 50 59l12 11" stroke-width="6"/>
+            </g>
+          </svg>
+          <h2 id="quiz-title">Análise gratuita e confidencial do seu caso</h2>
+        </div>
+        <p class="quiz-intro">Preencha os dados abaixo para que nossa equipe jurídica especializada avalie a viabilidade do seu ressarcimento.</p>
+        <form class="quiz-form" id="quiz" novalidate>
           <p class="sr-only" aria-live="polite" id="quiz-status">Etapa 1 de 3</p>
 
           <fieldset class="step is-on" data-step="1">
@@ -87,7 +92,7 @@
               <p class="field-error" id="whatsapp-erro" hidden>Digite o número com DDD, por exemplo (91) 98888-7777.</p>
             </div>
             <div class="step-actions">
-              <button class="btn" type="button" data-next>Continuar</button>
+              <button class="btn btn-gold" type="button" data-next>Continuar</button>
             </div>
           </fieldset>
 
@@ -113,7 +118,7 @@
               <p class="field-error" id="quando-erro" hidden>Escolha quando aconteceu.</p>
             </fieldset>
             <div class="step-actions">
-              <button class="btn" type="button" data-next>Continuar</button>
+              <button class="btn btn-gold" type="button" data-next>Continuar</button>
               <button class="link" type="button" data-back>Voltar</button>
             </div>
           </fieldset>
@@ -129,152 +134,143 @@
               <p class="field-error" id="banco-erro" hidden>Escreva o nome do seu banco.</p>
             </div>
             <div class="step-actions">
-              <button class="btn btn-accent btn-cta" type="submit">Quero verificar se posso recuperar meu dinheiro</button>
+              <button class="btn btn-gold btn-cta" type="submit">Quero verificar se posso recuperar meu dinheiro</button>
               <button class="link" type="button" data-back>Voltar</button>
             </div>
           </fieldset>
         </form>
-        <p class="quiz-note" data-reveal><svg aria-hidden="true"><use href="#lock"/></svg>Seus dados são tratados conforme a LGPD e a nossa <a href="privacidade.html">Política de Privacidade</a>. Resposta rápida via WhatsApp.</p>
+        <p class="quiz-note"><svg aria-hidden="true"><use href="#lock"/></svg>Seus dados são tratados conforme a LGPD e a nossa <a href="privacidade.html">Política de Privacidade</a>. Resposta rápida via WhatsApp.</p>
         <noscript><p class="quiz-note"><a href="https://wa.me/5591987121589">Fale direto pelo WhatsApp: (91) 98712-1589</a></p></noscript>
-      </div>
-    </section>
+        <dl class="quiz-trust">
+          <div><dt>Advogado responsável</dt><dd>Marcelo Chaves, OAB/PA 40.586-B</dd></div>
+          <div><dt>Escritório</dt><dd>Av. Gov. José Malcher, 153, Belém, PA</dd></div>
+        </dl>
+      </section>
+    </main>
+  </div>
 
-    <!-- Urgência e base técnica -->
-    <section class="urgency" aria-labelledby="urgency-title">
-      <div class="urgency-text">
-        <h2 id="urgency-title" data-reveal>Por que o tempo é o seu maior inimigo?</h2>
-        <p data-reveal>Quando ocorre o golpe da falsa central telefônica, os criminosos usam técnicas avançadas para mascarar números e transferir o dinheiro rapidamente entre contas fantasmas.</p>
-        <p data-reveal>No entanto, as instituições financeiras têm o dever de segurança e de monitorar transações atípicas. A falta de bloqueio preventivo e a facilidade para abrir contas fraudulentas geram responsabilidade civil dos bancos (Súmula 479 do STJ).</p>
-      </div>
-      <div class="urgency-list">
-        <h3 data-reveal>Quanto antes você agir, maiores são as chances de:</h3>
-        <ul>
-          <li data-reveal>Localizar os valores bloqueados via medida cautelar ou MED, o Mecanismo Especial de Devolução do Pix.</li>
-          <li data-reveal>Responsabilizar a instituição financeira pela falha na prestação do serviço.</li>
-          <li data-reveal>Solicitar indenização pelos danos materiais e morais sofridos.</li>
-        </ul>
-        <a class="btn btn-accent" href="#analise" data-reveal>Verificar meu caso agora</a>
-      </div>
-    </section>
+  <!-- O prazo: texto no eixo e a tabela das chances -->
+  <section class="page time" id="tempo" aria-labelledby="time-title">
+    <h2 id="time-title" class="axis" data-reveal>Por que o tempo é o seu maior inimigo?</h2>
+    <div class="axis cols" data-reveal>
+      <p>Quando ocorre o golpe da falsa central telefônica, os criminosos usam técnicas avançadas para mascarar números e transferir o dinheiro rapidamente entre contas fantasmas.</p>
+      <p>No entanto, as instituições financeiras têm o dever de segurança e de monitorar transações atípicas. A falta de bloqueio preventivo e a facilidade para abrir contas fraudulentas geram responsabilidade civil dos bancos.</p>
+    </div>
+    <aside class="side-note" data-reveal>
+      <p class="side-figure">Súmula 479</p>
+      <p>Superior Tribunal de Justiça: os bancos respondem por fraudes praticadas por terceiros no âmbito das operações bancárias.</p>
+    </aside>
 
-    <!-- Como funciona: uma palavra por tela, sobre detalhes do quadro do escritório -->
-    <section class="verbs" aria-labelledby="verbs-title">
-      <h2 id="verbs-title" class="sr-only">Como funciona o atendimento</h2>
-      <article class="verb">
-        <img src="img/quadro-2.webp" width="1000" height="1158" alt="" loading="lazy" data-drift>
-        <div class="verb-pin"><h3>Preencher</h3></div>
-        <p class="verb-text">Você envia os dados no formulário acima.</p>
-      </article>
-      <article class="verb">
-        <img src="img/quadro-3.webp" width="1000" height="875" alt="" loading="lazy" data-drift>
-        <div class="verb-pin"><h3>Analisar</h3></div>
-        <p class="verb-text">Nosso time analisa os comprovantes, o boletim de ocorrência e o histórico de contato com a falsa central.</p>
-      </article>
-      <article class="verb">
-        <img src="img/quadro-1.webp" width="1000" height="1158" alt="" loading="lazy" data-drift>
-        <div class="verb-pin"><h3>Direcionar</h3></div>
-        <p class="verb-text">Apresentamos a estratégia ideal para buscar o ressarcimento do seu dinheiro na Justiça ou pela via administrativa.</p>
-      </article>
-    </section>
+    <h3 class="axis table-title" data-reveal>Quanto antes você agir, maiores são as chances de:</h3>
+    <table class="chances" data-reveal>
+      <tbody>
+        <tr><th scope="row">Localizar os valores</th><td>Bloqueio do dinheiro via medida cautelar ou MED, o Mecanismo Especial de Devolução do Pix.</td><td>Primeiras horas</td></tr>
+        <tr><th scope="row">Responsabilizar o banco</th><td>Pela falha na prestação do serviço e pela falta de bloqueio da transação atípica.</td><td>Súmula 479 do STJ</td></tr>
+        <tr><th scope="row">Pedir indenização</th><td>Pelos danos materiais e morais sofridos com o golpe.</td><td>Código de Defesa do Consumidor</td></tr>
+      </tbody>
+    </table>
+  </section>
 
-    <!-- Equipe -->
-    <section class="team" aria-labelledby="team-title">
-      <div class="team-pin">
-        <h2 id="team-title" data-reveal>Nossa equipe</h2>
-        <p data-reveal>Escritório em Belém, com atendimento a vítimas de golpe em todo o Brasil.</p>
-      </div>
-      <div class="team-list">
-        <article class="person">
-          <img src="img/felipe.webp" width="853" height="1066" alt="Dr. Felipe Kato" loading="lazy">
-          <div class="person-text">
-            <h3>Dr. Felipe Kato</h3>
-            <p class="person-role">Direito Tributário</p>
-            <p>Especialista em Direito Tributário pela PUC-SP, com atuação técnica e estratégica em recuperação de créditos.</p>
-          </div>
-        </article>
-        <article class="person">
-          <img src="img/hikaru.webp" width="900" height="1125" alt="Dr. Hikaru Sasaki" loading="lazy">
-          <div class="person-text">
-            <h3>Dr. Hikaru Sasaki</h3>
-            <p class="person-role">Direito do Trabalho e Previdenciário · OAB/PA 37.982</p>
-            <p>Advogado em defesa dos trabalhadores, com experiência também em Direito Imobiliário e de Família.</p>
-          </div>
-        </article>
-      </div>
-    </section>
+  <!-- Como funciona: frases em escada, campo dourado -->
+  <section class="page field-gold steps" id="como" aria-labelledby="step-1">
+    <ol class="stairs">
+      <li data-reveal>
+        <h2 id="step-1">Primeiro, você preenche o formulário.</h2>
+        <p>Você envia os dados no formulário acima, em menos de 2 minutos.</p>
+      </li>
+      <li data-reveal>
+        <h3>Depois, analisamos o seu caso.</h3>
+        <p>Nosso time analisa os comprovantes, o boletim de ocorrência e o histórico de contato com a falsa central.</p>
+      </li>
+      <li data-reveal>
+        <h3>Então, mostramos o caminho.</h3>
+        <p>Apresentamos a estratégia ideal para buscar o ressarcimento do seu dinheiro na Justiça ou pela via administrativa.</p>
+      </li>
+    </ol>
+  </section>
 
-    <!-- Dúvidas ao lado da foto alta -->
-    <section class="faq" aria-labelledby="faq-title">
-      <div class="faq-text">
-        <h2 id="faq-title" data-reveal>Dúvidas comuns</h2>
-        <ul class="facts" data-reveal>
-          <li>Av. Gov. José Malcher, 153, Nazaré, Belém</li>
-          <li>Atendimento nacional 100% digital</li>
-          <li>WhatsApp (91) 98712-1589</li>
-        </ul>
-        <div class="qa" data-reveal>
-          <details>
-            <summary>A análise tem algum custo?</summary>
-            <p>Não. A análise inicial do seu caso é gratuita e confidencial. Se houver ação, os honorários são combinados com você antes, por escrito.</p>
-          </details>
-          <details>
-            <summary>Fui eu que fiz o Pix. Ainda assim?</summary>
-            <p>Sim, vale analisar. Na falsa central, o criminoso costuma usar dados que só o banco deveria ter, e a falta de bloqueio de uma transação atípica pesa na avaliação.</p>
-          </details>
-          <details>
-            <summary>Que documentos devo separar?</summary>
-            <p>Comprovante do Pix, prints da conversa ou registro das ligações, número ou chave usada pelo golpista, extrato do dia e o boletim de ocorrência.</p>
-          </details>
-          <details>
-            <summary>Já passou mais de 30 dias. Ainda dá?</summary>
-            <p>Pode dar. O MED funciona melhor nos primeiros dias, mas a responsabilização do banco na Justiça tem prazo bem maior. Cada caso é avaliado pelos fatos.</p>
-          </details>
-          <details>
-            <summary>Preciso ir ao escritório?</summary>
-            <p>Não. O atendimento é 100% digital, pelo WhatsApp e por videochamada, em todo o Brasil.</p>
-          </details>
-        </div>
-        <div class="faq-actions" data-reveal>
-          <a class="btn" href="#analise">Fazer a análise gratuita</a>
-          <a class="link" href="https://wa.me/5591987121589" target="_blank" rel="noopener">Falar direto no WhatsApp</a>
-        </div>
-      </div>
-      <div class="faq-media">
-        <img class="faq-tall" src="img/justica.webp" width="750" height="1000" alt="Estátua da Justiça com a balança erguida" loading="lazy" data-reveal>
-        <img class="faq-square" src="img/luminaria.webp" width="600" height="600" alt="Luminária acesa no escritório da MKS" loading="lazy" data-reveal>
-      </div>
-    </section>
-
-    <!-- Fechamento: a equipe reunida, uma chamada, o botão -->
-    <section class="close" aria-labelledby="close-title">
-      <figure class="close-photo" data-reveal>
-        <img src="img/socios.webp" width="1300" height="1448" alt="Os sócios Felipe Kato e Hikaru Sasaki no escritório da MKS em Belém" loading="lazy">
+  <!-- Equipe: foto larga, tile de cor, fatos, retratos -->
+  <section class="page team" id="equipe" aria-labelledby="team-title">
+    <h2 id="team-title" class="axis" data-reveal>Quem cuida do seu caso</h2>
+    <p class="axis lead" data-reveal>Um escritório em Nazaré, Belém, que atende vítimas de golpe bancário em todo o Brasil, com cada etapa explicada antes de acontecer.</p>
+    <div class="mosaic">
+      <figure class="mosaic-photo" data-reveal>
+        <img src="img/socios-wide.webp" width="1600" height="1002" alt="Os sócios Felipe Kato e Hikaru Sasaki no escritório da MKS em Belém" loading="lazy">
+        <figcaption>Felipe Kato e Hikaru Sasaki, sócios da Mendes, Kato &amp; Sasaki Advogados Associados.</figcaption>
       </figure>
-      <div class="close-text">
-        <h2 id="close-title" data-reveal>Quanto antes, melhor</h2>
-        <p data-reveal>Cada dia conta para localizar e bloquear os valores. Conte o que aconteceu hoje e saiba se o seu caso tem direito ao ressarcimento.</p>
-        <a class="btn btn-accent close-btn" href="#analise" data-reveal>Quero verificar meu caso</a>
-        <dl class="close-facts" data-reveal>
-          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/5591987121589" target="_blank" rel="noopener">(91) 98712-1589</a></dd></div>
-          <div><dt>Escritório</dt><dd><a href="https://maps.google.com/?q=Av.+Gov.+Jos%C3%A9+Malcher,+153,+Bel%C3%A9m+-+PA" target="_blank" rel="noopener">Av. Governador José Malcher, 153, Nazaré, Belém, PA</a></dd></div>
-          <div><dt>Atendimento</dt><dd>Nacional, 100% digital</dd></div>
+      <div class="mosaic-side">
+        <div class="mosaic-tile" data-reveal><svg aria-hidden="true"><use href="#mark"/></svg></div>
+        <dl class="facts" data-reveal>
+          <div><dt>Escritório</dt><dd>Belém, PA</dd></div>
+          <div><dt>Atendimento</dt><dd>Nacional, digital</dd></div>
+          <div><dt>Responsável</dt><dd>Marcelo Chaves, OAB/PA 40.586-B</dd></div>
+          <div><dt>CNPJ</dt><dd>62.937.955/0001-27</dd></div>
         </dl>
       </div>
-    </section>
-  </main>
+    </div>
+    <div class="people">
+      <article class="person" data-reveal>
+        <img src="img/felipe.webp" width="853" height="1066" alt="Dr. Felipe Kato" loading="lazy">
+        <div>
+          <h3>Dr. Felipe Kato</h3>
+          <p class="person-role">Direito Tributário</p>
+          <p>Especialista em Direito Tributário pela PUC-SP, com atuação técnica e estratégica em recuperação de créditos.</p>
+        </div>
+      </article>
+      <article class="person" data-reveal>
+        <img src="img/hikaru.webp" width="900" height="1125" alt="Dr. Hikaru Sasaki" loading="lazy">
+        <div>
+          <h3>Dr. Hikaru Sasaki</h3>
+          <p class="person-role">Direito do Trabalho e Previdenciário, OAB/PA 37.982</p>
+          <p>Advogado em defesa dos trabalhadores, com experiência também em Direito Imobiliário e de Família.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Dúvidas: perguntas grandes, respostas ao lado, tudo aberto -->
+  <section class="page faq" id="duvidas" aria-labelledby="faq-title">
+    <div class="qa-row" data-reveal><h2 id="faq-title" class="qa-q qa-head">Dúvidas comuns</h2></div>
+    <div class="qa-row" data-reveal>
+      <h3 class="qa-q">A análise tem algum custo?</h3>
+      <p class="qa-a">Não. A análise inicial do seu caso é gratuita e confidencial. Se houver ação, os honorários são combinados com você antes, por escrito.</p>
+    </div>
+    <div class="qa-row" data-reveal>
+      <h3 class="qa-q">Fui eu que fiz o Pix. Ainda assim?</h3>
+      <p class="qa-a">Sim, vale analisar. Na falsa central, o criminoso costuma usar dados que só o banco deveria ter, e a falta de bloqueio de uma transação atípica pesa na avaliação.</p>
+    </div>
+    <div class="qa-row" data-reveal>
+      <h3 class="qa-q">Que documentos devo separar?</h3>
+      <p class="qa-a">Comprovante do Pix, prints da conversa ou registro das ligações, número ou chave usada pelo golpista, extrato do dia e o boletim de ocorrência.</p>
+    </div>
+    <div class="qa-row" data-reveal>
+      <h3 class="qa-q">Já passou mais de 30 dias. Ainda dá?</h3>
+      <p class="qa-a">Pode dar. O MED funciona melhor nos primeiros dias, mas a responsabilização do banco na Justiça tem prazo bem maior. Cada caso é avaliado pelos fatos.</p>
+    </div>
+    <div class="qa-row" data-reveal>
+      <h3 class="qa-q">Preciso ir ao escritório?</h3>
+      <p class="qa-a">Não. O atendimento é 100% digital, pelo WhatsApp e por videochamada, em todo o Brasil.</p>
+    </div>
+  </section>
+
+  <!-- Fechamento invertido -->
+  <section class="cta" aria-labelledby="cta-title">
+    <h2 id="cta-title" data-reveal>Quanto antes, melhor.</h2>
+    <div class="cta-foot">
+      <p data-reveal>Cada dia conta para localizar e bloquear os valores. Faça a análise gratuita agora.</p>
+      <a class="btn btn-gold" href="#analise" data-reveal>Quero verificar meu caso</a>
+    </div>
+  </section>
 
   <footer class="foot">
-    <div class="foot-id">
-      <p class="foot-name">Mendes, Kato &amp; Sasaki Advogados Associados</p>
-      <p>CNPJ 62.937.955/0001-27</p>
-      <p>Advogado responsável: Marcelo Chaves, OAB/PA 40.586-B</p>
+    <div class="foot-cols">
+      <div><p class="foot-h">Escritório</p><p>Av. Governador José Malcher, 153<br>CEP 66.035-065, Belém, PA</p></div>
+      <div><p class="foot-h">Contato</p><p><a href="https://wa.me/5591987121589" target="_blank" rel="noopener">WhatsApp (91) 98712-1589</a><br><a href="https://www.instagram.com/mks.advogados/" target="_blank" rel="noopener">Instagram @mks.advogados</a></p></div>
+      <div><p class="foot-h">Responsável</p><p>Marcelo Chaves, OAB/PA 40.586-B<br>CNPJ 62.937.955/0001-27</p></div>
+      <div><p class="foot-h">Atendimento</p><p>Nacional, 100% digital<br><a href="privacidade.html#termos">Termos de Uso</a> · <a href="privacidade.html">Privacidade</a></p></div>
     </div>
-    <p class="foot-addr">Av. Governador José Malcher, 153, CEP 66.035-065, Belém, PA<br>Atendimento nacional 100% digital</p>
-    <p class="foot-links">
-      <a href="privacidade.html#termos">Termos de Uso</a>
-      <a href="privacidade.html">Política de Privacidade</a>
-      <a href="https://www.instagram.com/mks.advogados/" target="_blank" rel="noopener">Instagram</a>
-    </p>
+    <p class="foot-word" aria-hidden="true">MKS Advogados</p>
+    <p class="foot-legal">© 2026 Mendes, Kato &amp; Sasaki Advogados Associados. Conteúdo informativo; cada caso é analisado individualmente.</p>
   </footer>
 
   <a class="wa-tab" href="https://wa.me/5591987121589?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20falar%20sobre%20um%20golpe%20do%20Pix." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">

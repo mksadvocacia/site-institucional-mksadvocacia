@@ -5,9 +5,9 @@ HTML, CSS e JS puros, sem build. Mobile first.
 
 - `index.html` — página
 - `css/style.css` — estilos (tokens no `:root`)
-- `js/main.js` — crossfade do hero, entradas, formulário de 3 perguntas
+- `js/main.js` — entradas ao rolar, aba do WhatsApp, formulário em 3 etapas
 - `img/` — fotos do repositório do site institucional (MarceloCChaves/Mks-Advogados-Webpage), recortadas e em WebP
-- `test/main.test.mjs` — `node test/main.test.mjs` (formatação do valor e mensagem do WhatsApp)
+- `test/main.test.mjs` — `node test/main.test.mjs` (máscara do telefone e mensagem do WhatsApp)
 
 Rodar local: `python3 -m http.server 5178` e abrir http://localhost:5178.
 

@@ -26,21 +26,6 @@ function buildMessage({ nome, whatsapp, valor, quando, banco }) {
 if (typeof document !== 'undefined') init();
 
 function init() {
-  /* Hero: crossfade lento entre os três sócios */
-  const fade = document.querySelector('[data-fade]');
-  if (fade && !reduce) {
-    const imgs = [...fade.querySelectorAll('img')];
-    let i = 0, timer;
-    const tick = () => {
-      imgs[i].classList.remove('is-on');
-      i = (i + 1) % imgs.length;
-      imgs[i].classList.add('is-on');
-    };
-    const start = () => { clearInterval(timer); timer = setInterval(tick, 5600); };
-    document.addEventListener('visibilitychange', () => (document.hidden ? clearInterval(timer) : start()));
-    start();
-  }
-
   /* Entradas por seção, com escalonamento entre irmãos */
   const io = new IntersectionObserver((entries) => {
     for (const e of entries) if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
@@ -48,30 +33,12 @@ function init() {
   document.querySelectorAll('section').forEach((sec) => {
     sec.querySelectorAll('[data-reveal]').forEach((el, n) => { el.style.setProperty('--d', `${n * 80}ms`); io.observe(el); });
   });
-  document.querySelectorAll('.person, .verb').forEach((el) => io.observe(el));
+  
 
-  /* Quadro do escritório desliza devagar atrás de cada verbo */
-  const drift = [...document.querySelectorAll('[data-drift]')];
-  if (!reduce && drift.length) {
-    let raf = 0;
-    const onScroll = () => {
-      raf = 0;
-      const vh = innerHeight;
-      for (const img of drift) {
-        const r = img.parentElement.getBoundingClientRect();
-        if (r.bottom < 0 || r.top > vh) continue;
-        const p = (r.top + r.height / 2 - vh / 2) / vh; // -1..1
-        img.style.transform = `translate3d(0, ${p * -6}%, 0) scale(1.04)`;
-      }
-    };
-    addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(onScroll); }, { passive: true });
-    onScroll();
-  }
-
-  /* Aba do WhatsApp aparece depois do primeiro screen */
+  /* Aba do WhatsApp aparece depois do quadro de abertura */
   const tab = document.querySelector('.wa-tab');
-  const hero = document.querySelector('.hero');
-  // some onde já existe um botão de WhatsApp na tela: o quiz e o fechamento
+  const hero = document.querySelector('.board');
+  // some no quiz e no fechamento (já têm botão) e nas dúvidas (não cobre as perguntas)
   const covered = new Set();
   let pastHero = false;
   const sync = () => tab.classList.toggle('is-on', pastHero && !covered.size);
@@ -80,7 +47,7 @@ function init() {
     for (const e of entries) e.isIntersecting ? covered.add(e.target) : covered.delete(e.target);
     sync();
   }, { threshold: 0.35 });
-  document.querySelectorAll('#analise, .close').forEach((el) => cover.observe(el));
+  document.querySelectorAll('#analise, .faq, .cta').forEach((el) => cover.observe(el));
 
   initQuiz();
 }
