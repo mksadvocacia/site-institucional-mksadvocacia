@@ -177,6 +177,7 @@ h2 { font-size: var(--step-head); }
 .step-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px; margin-top: 20px; }
 .step-actions .btn { flex: 1 1 100%; }
 .btn-cta { min-height: 62px; text-wrap: balance; }
+.step-actions .btn.btn-cta { flex: 1 1 100%; min-width: 0; } /* texto longo: ocupa o card e quebra linha em vez de estourar */
 .quiz-note { margin-top: 16px; font-size: var(--step-small); color: var(--muted); }
 .quiz-note svg { display: inline-block; width: 14px; height: 14px; margin: 0 6px -2px 0; color: var(--gold-text); }
 
