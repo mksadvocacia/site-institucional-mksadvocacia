@@ -237,7 +237,7 @@ details[open] p { animation: stepIn .4s var(--ease); }
 
 /* Fechamento */
 .close { margin-top: var(--gap); padding: 0 var(--m); display: grid; gap: 36px; }
-.close-photo img { width: 100%; filter: brightness(.92); }
+.close-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top; filter: brightness(.92); }
 .close-text p { margin-top: 18px; max-width: 40ch; font-size: var(--step-lead); line-height: 1.35; }
 .close-btn { margin-top: 32px; width: 100%; min-height: 60px; }
 .close-facts { margin-top: 40px; display: grid; gap: 18px; }
@@ -338,7 +338,7 @@ html:not(.js) .wa-tab { transform: none; }
   .person-text p:last-child { max-width: 34ch; }
   .person h3 { margin-top: 0; }
 
-  .close { grid-template-columns: 7fr 5fr; align-items: center; gap: 5vw; }
+  .close { grid-template-columns: 5fr 7fr; align-items: center; gap: 6vw; }
 
   .faq { grid-template-columns: 5fr 7fr; gap: 6vw; align-items: start; }
   .faq-media { order: 0; width: auto; padding-bottom: 0; margin-top: -80px; }

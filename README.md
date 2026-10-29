@@ -21,16 +21,15 @@ Três etapas, uma para cada divisa do logo:
 
 Ao enviar:
 - manda uma cópia do lead por e-mail via FormSubmit (`mks.advogados01@gmail.com`, o mesmo do site institucional);
-- abre `wa.me/5591985560099` com as respostas na mensagem;
+- abre `wa.me/5591987121589` (WhatsApp profissional de leads) com as respostas na mensagem;
 - dispara o evento `generate_lead` no Google Analytics (G-9BD24FG4YH).
 
 `privacidade.html` tem a Política de Privacidade e os Termos de Uso.
 
 ## Conferir antes de publicar
 
-- Nome do advogado dono da inscrição OAB 40.586-B (o rodapé mostra só o escritório) e a seccional.
 - O FormSubmit pede confirmação por e-mail no primeiro envio AJAX: fazer um envio de teste e clicar no link que chega.
-- "Análise gratuita": conferir com o Provimento 205/2021 da OAB, que restringe menção a gratuidade em publicidade.
 - Política de Privacidade: prazo de 6 meses para excluir dados e demais textos são sugestões; revisar.
-- Se o Dr. Vinicius Mendes é mesmo o responsável pelos casos de Pix (inferido da área: Direito Bancário).
+- OAB do Dr. Felipe Kato (o card dele ainda não mostra).
+- Confirmar que o sócio do centro na foto `img/socios.webp` é o Dr. Felipe Kato.
 - Pixel do Meta/Google Ads, se o anúncio usar.

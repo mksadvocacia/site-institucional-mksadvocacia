@@ -1,4 +1,4 @@
-const WA = '5591985560099';
+const WA = '5591987121589'; // WhatsApp profissional que recebe os leads
 const LEADS = 'https://formsubmit.co/ajax/mks.advogados01@gmail.com'; // mesmo e-mail do formulário do site institucional
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
