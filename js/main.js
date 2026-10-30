@@ -19,7 +19,7 @@ function buildMessage({ nome, whatsapp, valor, quando, banco }) {
     `Valor perdido: ${valor}`,
     `Quando ocorreu: ${quando}`,
     `Banco: ${banco}`,
-    'Quero verificar se posso recuperar meu dinheiro.',
+    'Quero recuperar meu dinheiro.',
   ].join('\n');
 }
 
