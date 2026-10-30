@@ -8,6 +8,7 @@ HTML, CSS e JS puros, sem build. Mobile first.
 - `js/main.js` — entradas ao rolar, aba do WhatsApp, formulário em 3 etapas
 - `img/` — fotos do repositório do site institucional (MarceloCChaves/Mks-Advogados-Webpage), recortadas e em WebP
 - `test/main.test.mjs` — `node test/main.test.mjs` (máscara do telefone e mensagem do WhatsApp)
+- `HANDOFF.md` — explicação completa do projeto e pendências
 
 Rodar local: `python3 -m http.server 5178` e abrir http://localhost:5178.
 
