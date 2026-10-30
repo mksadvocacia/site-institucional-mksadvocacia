@@ -4,7 +4,7 @@ Estado em 30/10/2026. Repo privado: `git@github.com:acostadanilo23/mks-golpe-pix
 
 ## O que é
 
-Landing de uma página para o anúncio "golpe do Pix da falsa central" da **Mendes, Kato & Sasaki Advogados Associados** (Belém/PA, CNPJ 62.937.955/0001-27). Objetivo único: transformar o clique do anúncio em conversa no WhatsApp de leads, **(91) 98712-1589**.
+Landing de uma página para o anúncio "golpe do Pix da falsa central" da **Mendes, Kato & Sasaki Advogados Associados** (Belém/PA, CNPJ 62.937.955/0001-27). Objetivo único: transformar o clique do anúncio em conversa no WhatsApp de leads, **(91) 93300-9749**.
 
 Stack: HTML, CSS e JS puros. Sem build, sem dependência, sem framework. Mobile first. Qualquer hospedagem estática serve (GitHub Pages, Netlify, Vercel, cPanel).
 
@@ -61,7 +61,7 @@ Ao enviar, `js/main.js`:
 
 1. Manda uma cópia do lead por e-mail via **FormSubmit**, por AJAX, para `mks.advogados01@gmail.com`. Se falhar, o fluxo segue sem travar.
 2. Dispara `generate_lead` no **Google Analytics** `G-9BD24FG4YH`.
-3. Abre `wa.me/5591987121589` com a mensagem pronta:
+3. Abre `wa.me/5591933009749` com a mensagem pronta:
 
 ```
 Olá! Vim pelo site da MKS Advogados. Caí no golpe do Pix da falsa central.
@@ -73,7 +73,7 @@ Banco: …
 Quero verificar se posso recuperar meu dinheiro.
 ```
 
-Para trocar o número ou o e-mail, mexa nas constantes `WA` e `LEADS` no topo do `js/main.js` **e** procure `5591987121589` no `index.html`, porque os links dos botões são estáticos.
+Para trocar o número ou o e-mail, mexa nas constantes `WA` e `LEADS` no topo do `js/main.js` **e** procure `5591933009749` no `index.html`, porque os links dos botões são estáticos.
 
 ## Visual
 
@@ -97,7 +97,7 @@ Para trocar o número ou o e-mail, mexa nas constantes `WA` e `LEADS` no topo do
 - **Dr. Hikaru Sasaki**: OAB/PA 37.982.
 - **Vinicius Mendes saiu do escritório**: nenhuma foto nem menção a ele. A foto do escritório onde ele aparecia foi removida.
 - **"Análise gratuita"**: liberado pelo escritório.
-- **Destino dos leads**: WhatsApp (91) 98712-1589, com cópia no e-mail mks.advogados01@gmail.com.
+- **Destino dos leads**: WhatsApp (91) 93300-9749, com cópia no e-mail mks.advogados01@gmail.com.
 - **Marcelo Chaves**: é dev parceiro (fez o site institucional), não advogado. Não aparece na página.
 - **Domínio**: mksadvogados.adv.br não resolvia durante o trabalho; as fotos vieram do repo `MarceloCChaves/Mks-Advogados-Webpage`.
 
@@ -105,7 +105,7 @@ Para trocar o número ou o e-mail, mexa nas constantes `WA` e `LEADS` no topo do
 
 - [ ] **Ativar o FormSubmit**. O primeiro envio dispara um e-mail de confirmação para mks.advogados01@gmail.com; alguém precisa clicar no link, senão os leads não chegam por e-mail. O WhatsApp funciona de qualquer jeito.
 - [ ] Confirmar que o sócio de **gravata vermelha** em `img/socios-wide.webp` é o Dr. Felipe Kato.
-- [ ] Confirmar o texto anti-golpe: "só atendemos pelo (91) 98712-1589 e nunca cobramos pela análise".
+- [ ] Confirmar o texto anti-golpe: "só atendemos pelo (91) 93300-9749 e nunca cobramos pela análise".
 - [ ] Revisar a Política de Privacidade. O prazo de 6 meses para excluir dados é sugestão.
 - [ ] Pixel do Meta e/ou tag do Google Ads, se o anúncio for medir conversão. O lugar natural é junto do `gtag` no `<head>` do `index.html` e do evento de envio no `js/main.js`.
 - [ ] **Hospedar** (ainda não está no ar) e apontar domínio ou subdomínio.
