@@ -38,8 +38,8 @@ node test/main.test.mjs
 4. **Prazo** (`#prazo`): "Por que o tempo é o seu maior inimigo?" com lista de chances por prazo.
 5. **Como funciona** (`#como`): Preenchimento → Análise do caso → Direcionamento jurídico.
 6. **Equipe** (`#equipe`):
-   - Dr. Felipe Kato, sócio e advogado responsável, OAB/PA 40.586-B, Instagram @felipeokato.adv;
-   - Dr. Hikaru Sasaki, sócio, OAB/PA 37.982, Instagram @advhikarusasaki;
+   - Dr. Felipe Kato, sócio e advogado responsável, OAB/PA 40.586-B;
+   - Dr. Hikaru Sasaki, sócio, OAB/PA 37.982;
    - card do escritório com endereço, CNPJ e @mks.advogados.
 7. **Alerta** "Cuidado com um segundo golpe": o escritório só atende pelo número oficial e não cobra pela análise.
 8. **FAQ** (`#duvidas`): acordeão `<details>` + botão do WhatsApp.
@@ -119,3 +119,4 @@ Para trocar o número ou o e-mail, mexa nas constantes `WA` e `LEADS` no topo do
 4. Dois redesenhos completos, porque o visual anterior estava escuro e não parecia advocacia. O atual veio da pesquisa dos grandes escritórios.
 5. CTA verde com logo do WhatsApp, brilho e pulso; Instagram dos sócios e do escritório.
 6. Corrigido o botão de envio que estourava o card no desktop.
+7. Número de leads trocado para (91) 93300-9749; Instagram dos sócios removido (fica só o @mks.advogados).
